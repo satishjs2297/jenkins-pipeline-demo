@@ -113,7 +113,7 @@ pipeline {
 def enableSonar(params) {
     def sonarFlag
     echo 'enableFortify params :: '+params.currentBranch + ' enableFortify :: '+params.enableSonar
-    if(params.currentBranch.matches("master|release-|hotfix-") || params.enableSonar) {
+    if(params.currentBranch.matches("develop|release-|hotfix-") || params.enableSonar) {
         sonarFlag = true
     }
     sonarFlag
@@ -122,7 +122,7 @@ def enableSonar(params) {
 def enableFortify(params) {
     def fortifyFlag
     echo 'enableFortify params :: '+params.currentBranch + ' enableFortify :: '+params.enableFortify
-    if((params.currentBranch.matches("master|release-|hotfix-")) || params.enableFortify) {
+    if((params.currentBranch.matches("develop|release-|hotfix-")) || params.enableFortify) {
         fortifyFlag = true
     }    
     fortifyFlag

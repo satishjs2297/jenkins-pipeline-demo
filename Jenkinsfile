@@ -17,7 +17,7 @@ pipeline {
                     echo 'Trigger to build preparation.'
                     config.currentBranch = env.BRANCH_NAME
                     config.enableSonar   = true
-                    config.enableFortify = false
+                    config.enableFortify = params.FORTIFY_SCAN
                 }
             }
         }
